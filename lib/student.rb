@@ -9,14 +9,14 @@ class Student
   attr_reader :id
   
   def initialize(name, grade, id = nil)
-    @id = id
     @name = name
     @grade = grade
+    @id = id
   end
   
 
   def self.new_from_db(row)
-    student = self.new(name, grade, id)
+    student = self.new(name, grade)
     student.id = row[0]
     student.name = row[1]
     student.grade = row[2]
