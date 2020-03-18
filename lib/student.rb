@@ -47,6 +47,8 @@ class Student
   end
   
   
+  
+  
   def self.new_from_db(row)
     student = self.new()
     student.id = row[0]
@@ -72,16 +74,6 @@ class Student
     # return a new instance of the Student class
   end
   
-  
-  
-
-  
-  
-  def self.create(name, grade)
-    student = Student.new(name, grade)
-    student.save
-    student
-  end
   
   def update
     sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
