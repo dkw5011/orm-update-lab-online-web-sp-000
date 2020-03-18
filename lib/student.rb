@@ -8,10 +8,10 @@ class Student
   attr_accessor :name, :grade
   attr_reader :id
   
-  def initialize(name, grade, id=nil)
+  def initialize(id=nil, name, grade)
+    @id = id
     @name = name
     @grade = grade
-    @id = id
   end
   
   def self.create_table
@@ -54,10 +54,10 @@ class Student
   
   
   def self.new_from_db(row)
-    student = self.new(name, grade, id)
-    student.id = row[2]
-    student.name = row[0]
-    student.grade = row[1]
+    student = self.new(id, name, grade)
+    student.id = row[0]
+    student.name = row[1]
+    student.grade = row[2]
     student
     # create a new Student object given a row from the database
   end
