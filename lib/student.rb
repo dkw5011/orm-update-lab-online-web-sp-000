@@ -9,8 +9,6 @@ class Student
   attr_reader :id
   
   
-  
-
   def self.new_from_db(row)
     student = self.new
     student.id = row[0]
